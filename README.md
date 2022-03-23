@@ -6,10 +6,10 @@
 
 - Stuff to do :
     - FCN8
-    - UNet
     - Our final model. (need to read some more for this)
 
-- Completed:
-    - FCN16 (testing remains)
+- To Test, but implemented
+    - FCN16
+    - UNet
 
 
