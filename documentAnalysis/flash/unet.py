@@ -1,19 +1,24 @@
 from flash.image import SemanticSegmentation
 from flash.image import SemanticSegmentationData
 
-# dm = SemanticSegmentationData.from_folders(
-#     train_folder="data/CameraRGB",
-#     train_target_folder="data/CameraSeg",
-#     val_split=0.1,
-#     image_size=(256, 256),
-#     num_classes=5,
-# )
-print(SemanticSegmentation.available_heads())
+dm = SemanticSegmentationData.from_folders(
+    train_folder="/home/praveen_venkatesh/data/train-0/publaynet/train",
+    train_target_folder="/home/praveen_venkatesh/data/train-0/publaynet/annotations",
+    val_split=0.1,
+    batch_size = 5,
+    transform_kwargs=dict(image_size=(800, 640)),
+    num_classes=8,
+    num_workers = 4,
+)
 
-print(sorted(SemanticSegmentation.available_backbones('unet')))
+model = SemanticSegmentation(
+  head="unet", 
+  backbone='efficientnet-b0', 
+  num_classes=dm.num_classes  
+)
 
-# print(SemanticSegmentation.available_pretrained_weights('unet'))
+from flash import Trainer
 
-
-# model = SemanticSegmentation(
-#   head="unet", backbone='efficientnet-b0', pretrained="advprop", num_classes=dm.num_classes)
+trainer = Trainer(max_epochs=100, gpus = 1)
+trainer.fit(model, datamodule=dm)
+trainer.save_checkpoint("semantic_segmentation_model.pt")
