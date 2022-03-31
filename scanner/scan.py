@@ -34,7 +34,6 @@ cv2.imwrite('outputs/contours.png', orig_image)
 warped = four_point_transform(orig_image, doc_cnts.reshape(4, 2))
 output = cv2.cvtColor(warped, cv2.COLOR_BGR2GRAY)
 
-
 ret, output = cv2.threshold(output, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU, dst=output)
 
 cv2.imwrite('outputs/output.png', output)
