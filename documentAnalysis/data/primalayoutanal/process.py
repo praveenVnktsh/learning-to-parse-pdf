@@ -20,7 +20,7 @@ for path in glob.glob(r'E:\Google Drive\Acads\Notes\final sem\ML\project\learnin
                         for coord in coords:
                             coord = coord.attrib
                             coordslist.append([int(coord['x']), int(coord['y'])])
-                        cv2.fillPoly(img, np.array([coordslist]), 255, )
+                        cv2.fillPoly(img, np.array([coordslist]), 1, )
 
             except:
                 print('FAILL!')
@@ -35,7 +35,7 @@ for path in glob.glob(r'E:\Google Drive\Acads\Notes\final sem\ML\project\learnin
         
         imm = cv2.imread(r'E:\Google Drive\Acads\Notes\final sem\ML\project\learning-to-parse-pdf\documentAnalysis\data\primalayoutanal/downsize/' + filename + '.png')
         cv2.imwrite(r'E:\Google Drive\Acads\Notes\final sem\ML\project\learning-to-parse-pdf\documentAnalysis\data\primalayoutanal/finaldataset/images/' + filename + '.png', imm)
-        imm[:, :, 0][img == 255] = 0
+        imm[:, :, 0][img == 1] = 0
         cv2.imwrite(r'E:\Google Drive\Acads\Notes\final sem\ML\project\learning-to-parse-pdf\documentAnalysis\data\primalayoutanal/finaldataset/viz/' + filename + '.png', imm)
     except:
         pass
