@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PcGts xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2010-01-12 http://schema.primaresearch.org/PAGE/gts/pagecontent/2010-01-12/pagecontent.xsd" pcGtsId="pc-ta00053c" xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2010-01-12" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Metadata>
+    <Creator>PRImA Research</Creator>
+    <Created>2009-11-25T12:31:48</Created>
+    <LastChange>2009-11-25T12:31:48</LastChange>
+    <Comments></Comments>
+  </Metadata>
+  <Page imageFilename="ta00053c.tif" imageWidth="2262" imageHeight="3207">
+    <TextRegion id="r0" orientation="0.000" readingDirection="left-to-right" type="heading" textColour="black" bgColour="white" reverseVideo="false" readingOrientation="0.000" indented="false" primaryLanguage="English" primaryScript="Latin">
+      <Coords>
+        <Point x="42" y="115" />
+        <Point x="795" y="115" />
+        <Point x="795" y="137" />
+        <Point x="42" y="137" />
+      </Coords>
+    </TextRegion>
+    <TextRegion id="r1" orientation="0.000" readingDirection="left-to-right" type="page-number" textColour="black" bgColour="white" reverseVideo="false" readingOrientation="0.000" indented="false" primaryLanguage="English" primaryScript="Latin">
+      <Coords>
+        <Point x="2088" y="115" />
+        <Point x="2144" y="115" />
+        <Point x="2144" y="137" />
+        <Point x="2088" y="137" />
+      </Coords>
+    </TextRegion>
+  </Page>
+</PcGts>
