@@ -2,11 +2,11 @@ from flash.image import SemanticSegmentation
 from flash.image import SemanticSegmentationData
 
 dm = SemanticSegmentationData.from_folders(
-    train_folder="/home/praveen_venkatesh/data/train-0/publaynet/train",
-    train_target_folder="/home/praveen_venkatesh/data/train-0/publaynet/annotations",
+    train_folder="/content/learning-to-parse-pdf/documentAnalysis/data/primalayoutanal/finaldataset/images",
+    train_target_folder="/content/learning-to-parse-pdf/documentAnalysis/data/primalayoutanal/finaldataset/annotations",
     val_split=0.1,
     batch_size = 5,
-    transform_kwargs=dict(image_size=(800, 640)),
+    transform_kwargs=dict(image_size=(800, 600)),
     num_classes=8,
     num_workers = 4,
 )
