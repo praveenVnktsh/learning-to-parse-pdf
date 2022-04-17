@@ -6,8 +6,8 @@ dm = SemanticSegmentationData.from_folders(
     train_target_folder="/content/learning-to-parse-pdf/documentAnalysis/data/primalayoutanal/finaldataset/annotations",
     val_split=0.1,
     batch_size = 5,
-    transform_kwargs=dict(image_size=(800, 600)),
-    num_classes=8,
+    transform_kwargs=dict(image_size=(800, 640)),
+    num_classes=2,
     num_workers = 4,
 )
 
@@ -19,6 +19,6 @@ model = SemanticSegmentation(
 
 from flash import Trainer
 
-trainer = Trainer(max_epochs=100, gpus = 1)
+trainer = Trainer(max_epochs=100, gpus = 0)
 trainer.fit(model, datamodule=dm)
 trainer.save_checkpoint("semantic_segmentation_model.pt")
